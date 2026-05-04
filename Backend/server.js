@@ -11,6 +11,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// connect routers
+const userRoutes = require('./src/routes/user.routes');
+
+app.use('/api/users', userRoutes);
+
 // Health check endpoint to verify the server is running
 app.get('/api/health', (req, res) => {
   res.status(200).json({ message: 'OmniDash API is running smoothly!' });
