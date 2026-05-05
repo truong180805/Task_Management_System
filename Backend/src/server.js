@@ -12,9 +12,12 @@ app.use(cors());
 app.use(express.json());
 
 // connect routers
-const userRoutes = require('./src/routes/user.routes');
+const userRoutes = require('./routes/user.routes');
+const authRoutes = require('./routes/auth.routes');
 
 app.use('/api/users', userRoutes);
+app.use('/api/auth', authRoutes);
+
 
 // Health check endpoint to verify the server is running
 app.get('/api/health', (req, res) => {
