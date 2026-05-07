@@ -14,9 +14,11 @@ app.use(express.json());
 // connect routers
 const userRoutes = require('./routes/user.routes');
 const authRoutes = require('./routes/auth.routes');
+const workspaceRoutes = require('./routes/workspace.routes');
 
 app.use('/api/users', userRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/worksapce', workspaceRoutes);
 
 
 // Health check endpoint to verify the server is running
